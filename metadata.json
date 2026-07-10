@@ -1,0 +1,6 @@
+{
+  "name": "Bangladesh National Portal",
+  "description": "A clone of the Bangladesh National Portal frontend interface.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

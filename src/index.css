@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bd-green: #006a4e;
+  --color-bd-red: #da291c;
+  --color-bd-hover-green: #004d38;
+  --color-bd-light-bg: #f8f9fa;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(0,106,78,1) 0%, rgba(0,77,56,1) 100%);
+}
+
+.hero-flag-circle {
+  background-color: var(--color-bd-red);
+  box-shadow: 0 0 60px rgba(218, 41, 28, 0.5);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

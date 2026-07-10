@@ -38,7 +38,7 @@ export default function MainFeed() {
         <GovtAtGlance />
       </div>
 
-      <div className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm relative w-full">
+      <div className="bg-white py-4 relative w-full border-0">
         <div className="flex justify-between items-center mb-3 border-b border-gray-100 pb-2 md:border-0 md:pb-0">
           <h3 className="text-[12px] md:text-[11px] font-bold md:text-gray-500 text-bd-green uppercase tracking-wider flex items-center gap-1.5">
             <span className="md:hidden w-1 h-3.5 bg-bd-red inline-block rounded-sm"></span>
@@ -83,7 +83,7 @@ export default function MainFeed() {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+      <div className="bg-white py-5 border-0">
         <div className="border-b border-gray-100 md:border-gray-200 pb-3 mb-4 flex justify-between items-center">
           <h3 className="text-[12px] md:text-[11px] font-bold md:text-gray-500 text-bd-green uppercase tracking-wider flex items-center gap-1.5">
             <span className="md:hidden w-1 h-3.5 bg-bd-red inline-block rounded-sm"></span>

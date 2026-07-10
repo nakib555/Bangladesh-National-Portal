@@ -2,7 +2,7 @@ import { Landmark, Network, Map, MapPin, Home, TreePine } from 'lucide-react';
 
 export default function GovtAtGlance() {
   return (
-    <div className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm select-none">
+    <div className="bg-white py-4 select-none border-0">
       <div className="flex justify-between items-center mb-3 border-b pb-1.5 border-gray-100 md:border-0 md:pb-0">
         <h3 className="text-[12px] md:text-[10px] font-bold text-bd-green md:text-gray-500 uppercase tracking-wider flex items-center gap-1.5">
           <span className="w-1 h-3.5 bg-bd-red inline-block rounded-sm md:hidden"></span>

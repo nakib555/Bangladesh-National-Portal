@@ -8,7 +8,7 @@ export default function SidebarRight() {
         <GovtAtGlance />
       </div>
 
-      <div className="bg-white mt-0 lg:mt-6 py-4 border-0">
+      <div className="bg-white mt-0 lg:mt-6 py-4 md:p-4 md:rounded-xl md:border md:border-gray-200 md:shadow-sm border-0">
         <div className="flex justify-between items-center mb-3">
           <h3 className="text-[10px] font-bold uppercase tracking-wider text-gray-500">Emergency Hotlines</h3>
           <a href="#" className="text-[9px] text-bd-green font-bold hover:underline">View All</a>

@@ -11,20 +11,20 @@ import BottomNav from './components/BottomNav';
 
 export default function App() {
   return (
-    <div className="bg-gray-100 text-gray-800 font-sans min-h-screen antialiased flex flex-col justify-between pb-16 lg:pb-0">
+    <div className="bg-white md:bg-gray-100 text-gray-800 font-sans min-h-screen antialiased flex flex-col justify-between pb-16 lg:pb-0">
       <Header />
-      <main className="max-w-7xl mx-auto w-full px-4 py-6 flex flex-col lg:grid lg:grid-cols-12 gap-6 items-start bg-white border-0">
-        <section className="w-full lg:col-span-9 space-y-6 flex flex-col order-1 lg:order-none">
+      <main className="max-w-7xl mx-auto w-full px-0 md:px-4 py-0 md:py-6 flex flex-col lg:grid lg:grid-cols-12 gap-0 md:gap-6 items-start">
+        <section className="w-full lg:col-span-9 space-y-0 md:space-y-6 flex flex-col order-1 lg:order-none">
           <MainFeed />
         </section>
-        <aside className="w-full lg:col-span-3 space-y-6 order-2 lg:order-none">
+        <aside className="w-full lg:col-span-3 space-y-0 md:space-y-6 order-2 lg:order-none px-4 md:px-0">
           <SidebarRight />
         </aside>
       </main>
       <div className="order-3 lg:order-none">
         <NoticesAndShortcuts />
       </div>
-      <div className="order-4 lg:order-none bg-white">
+      <div className="order-4 lg:order-none">
         <Footer />
       </div>
       <BottomNav />

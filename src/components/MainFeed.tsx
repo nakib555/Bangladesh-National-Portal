@@ -4,7 +4,7 @@ import GovtAtGlance from './GovtAtGlance';
 export default function MainFeed() {
   return (
     <>
-      <div className="hero-gradient rounded-xl overflow-hidden relative shadow-md text-white w-full aspect-[4/3] md:aspect-[21/9] flex items-center border border-emerald-950 select-none">
+      <div className="hero-gradient rounded-xl overflow-hidden relative shadow-md text-white w-full md:w-[750px] md:h-[350px] aspect-[4/3] md:aspect-auto flex items-center border border-emerald-950 select-none">
         <button className="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/20 hover:bg-black/45 items-center justify-center transition-colors z-20">
           <ChevronLeft className="w-4 h-4" />
         </button>
@@ -38,7 +38,7 @@ export default function MainFeed() {
         <GovtAtGlance />
       </div>
 
-      <div className="bg-white py-4 relative w-full border-0">
+      <div className="bg-white md:rounded-xl md:border md:border-gray-200 py-4 md:p-4 md:shadow-sm relative w-full md:w-[750px] border-0 px-4 md:px-0">
         <div className="flex justify-between items-center mb-3 border-b border-gray-100 pb-2 md:border-0 md:pb-0">
           <h3 className="text-[12px] md:text-[11px] font-bold md:text-gray-500 text-bd-green uppercase tracking-wider flex items-center gap-1.5">
             <span className="md:hidden w-1 h-3.5 bg-bd-red inline-block rounded-sm"></span>
@@ -83,7 +83,7 @@ export default function MainFeed() {
         </div>
       </div>
 
-      <div className="bg-white py-5 border-0">
+      <div className="bg-white py-5 md:p-5 md:rounded-xl md:border md:border-gray-200 md:shadow-sm border-0 px-4 md:px-0 md:w-[750px]">
         <div className="border-b border-gray-100 md:border-gray-200 pb-3 mb-4 flex justify-between items-center">
           <h3 className="text-[12px] md:text-[11px] font-bold md:text-gray-500 text-bd-green uppercase tracking-wider flex items-center gap-1.5">
             <span className="md:hidden w-1 h-3.5 bg-bd-red inline-block rounded-sm"></span>

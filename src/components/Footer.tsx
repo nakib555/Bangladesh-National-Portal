@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-[#362f25] text-white/80 text-[11px] py-12 mt-12 px-4 border-t-4 border-bd-red relative select-none">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-6 mb-8">
+        <div className="max-w-[1440px] mx-auto grid grid-cols-2 md:grid-cols-6 gap-6 mb-8">
           
           <div>
             <h5 className="font-bold border-b border-white/10 pb-1 mb-3 text-white">Important Links</h5>
@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto border-t border-white/10 pt-6 text-center md:flex md:justify-between text-[10px] text-white/40">
+        <div className="max-w-[1440px] mx-auto border-t border-white/10 pt-6 text-center md:flex md:justify-between text-[10px] text-white/40">
           <div className="space-y-1 md:space-y-0 md:space-x-4">
             <span>© 2026 Bangladesh National Portal. All Rights Reserved.</span>
             <span className="hidden md:inline">•</span>

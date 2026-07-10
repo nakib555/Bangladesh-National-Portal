@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <>
       <div className="hidden lg:flex bg-bd-green text-white text-[10px] py-1.5 px-4 border-b border-white/10 select-none justify-between items-center">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0 w-full">
+        <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0 w-full">
           <div className="flex items-center space-x-2">
             <span className="font-medium text-center md:text-left">Government of the People's Republic of Bangladesh</span>
           </div>
@@ -66,7 +66,7 @@ export default function Header() {
           </svg>
         </div>
         
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 relative z-10">
+        <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 relative z-10">
           <div className="flex w-full lg:w-auto justify-between items-center">
             <div className="flex items-center space-x-3.5">
               <svg className="w-14 h-14 md:w-16 md:h-16 shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -126,7 +126,7 @@ export default function Header() {
       </header>
 
       <nav className="hidden lg:flex bg-bd-green text-white text-[11px] sticky top-0 z-50 shadow-md select-none">
-        <div className="max-w-7xl mx-auto flex justify-between items-stretch overflow-x-auto scrollbar-hide">
+        <div className="max-w-[1440px] mx-auto flex justify-between items-stretch overflow-x-auto scrollbar-hide">
           <div className="flex items-center whitespace-nowrap">
             <a href="#" className="sticky left-0 z-10 px-5 py-3.5 bg-bd-hover-green hover:bg-emerald-950 transition-colors flex items-center justify-center shadow-[4px_0_12px_rgba(0,0,0,0.15)] border-r border-white/10">
               <Home className="w-4 h-4" />

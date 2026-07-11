@@ -1,46 +1,69 @@
 import { Info, Contrast, Search, Home, ChevronDown, User, Menu, Accessibility } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Header() {
+  const { lang, setLang, t } = useLanguage();
+
   return (
     <>
-      <div className="hidden lg:flex bg-bd-green text-white text-[10px] py-1.5 px-4 border-b border-white/10 select-none justify-between items-center">
+      <div className="hidden lg:flex bg-bd-hover-green text-white/95 text-[11px] py-2 px-4 border-b border-emerald-900/50 select-none justify-between items-center">
         <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0 w-full">
           <div className="flex items-center space-x-2">
-            <span className="font-medium text-center md:text-left">Government of the People's Republic of Bangladesh</span>
+            <span className="font-semibold text-center md:text-left tracking-wide uppercase text-[10px] text-emerald-100/90">{t('govtTitle')}</span>
           </div>
-          <div className="flex items-center space-x-3.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 whitespace-nowrap scrollbar-hide">
-            <a href="#" className="hover:underline flex items-center gap-1">
-              <Info className="w-3.5 h-3.5" /> Access to Information (a2i)
+          <div className="flex items-center space-x-4 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 whitespace-nowrap scrollbar-hide text-[11px]">
+            <a href="#" className="hover:text-emerald-100 flex items-center gap-1 transition-colors font-medium">
+              <Info className="w-3.5 h-3.5 opacity-80" /> {t('a2i')}
             </a>
-            <span className="text-white/20">|</span>
-            <a href="#" className="hover:underline flex items-center gap-1">
-              🇧🇩 Bangladesh Gov Portal Apps
+            <span className="text-white/15">|</span>
+            <a href="#" className="hover:text-emerald-100 flex items-center gap-1 transition-colors font-medium">
+              🇧🇩 {t('apps')}
             </a>
-            <span className="text-white/20">|</span>
-            <a href="#" className="hover:underline">Screen Reader</a>
-            <span className="text-white/20">|</span>
-            <div className="flex space-x-1 items-center bg-black/15 px-1.5 py-0.5 rounded">
-              <button className="px-1 hover:text-white/75 font-bold">A-</button>
-              <button className="px-1 hover:text-white/75 font-bold border-x border-white/10 px-1.5">A</button>
-              <button className="px-1 hover:text-white/75 font-bold">A+</button>
+            <span className="text-white/15">|</span>
+            <a href="#" className="hover:text-emerald-100 transition-colors">{t('screenReader')}</a>
+            <span className="text-white/15">|</span>
+            <div className="flex space-x-1 items-center bg-black/20 px-2 py-0.5 rounded-md border border-white/5 text-[10px]">
+              <button className="px-1 hover:text-white font-bold transition-colors">A-</button>
+              <button className="px-1 hover:text-white font-bold border-x border-white/10 px-2 transition-colors">A</button>
+              <button className="px-1 hover:text-white font-bold transition-colors">A+</button>
             </div>
-            <span className="text-white/20">|</span>
-            <button className="hover:underline flex items-center gap-1">
-              <Contrast className="w-3.5 h-3.5" /> High Contrast
+            <span className="text-white/15">|</span>
+            <button className="hover:text-emerald-100 flex items-center gap-1 transition-colors font-medium">
+              <Contrast className="w-3.5 h-3.5 opacity-80" /> {t('highContrast')}
             </button>
-            <span className="text-white/20">|</span>
-            <div className="font-bold flex space-x-1.5">
-              <a href="#" className="hover:text-bd-red">বাংলা</a>
-              <span className="text-white/30">|</span>
-              <a href="#" className="underline underline-offset-4 decoration-2">English</a>
+            <span className="text-white/15">|</span>
+            <div className="font-bold flex space-x-2 text-[11px]">
+              <button 
+                onClick={() => setLang('bn')} 
+                className={`transition-colors cursor-pointer ${lang === 'bn' ? 'text-bd-red underline underline-offset-4 decoration-2 font-black' : 'text-white/70 hover:text-white'}`}
+              >
+                বাংলা
+              </button>
+              <span className="text-white/20">|</span>
+              <button 
+                onClick={() => setLang('en')} 
+                className={`transition-colors cursor-pointer ${lang === 'en' ? 'text-white underline underline-offset-4 decoration-2 font-black' : 'text-white/70 hover:text-white'}`}
+              >
+                English
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="lg:hidden bg-white text-white flex justify-end items-center px-4 py-3 gap-4 text-[12px] font-bold border-b border-gray-100">
-        <a href="#" className="text-gray-600">বাংলা</a>
-        <a href="#" className="bg-emerald-50 text-bd-green px-3 py-1.5 border border-emerald-100 rounded-md">English</a>
+      <div className="lg:hidden bg-white text-white flex justify-end items-center px-4 py-3 gap-4 text-[12px] font-bold border-b border-gray-100 select-none">
+        <button 
+          onClick={() => setLang('bn')} 
+          className={`px-2 py-1 rounded transition-all cursor-pointer ${lang === 'bn' ? 'bg-bd-red text-white font-black' : 'text-gray-600 hover:bg-gray-50'}`}
+        >
+          বাংলা
+        </button>
+        <button 
+          onClick={() => setLang('en')} 
+          className={`px-3 py-1.5 border rounded-md transition-all cursor-pointer ${lang === 'en' ? 'bg-emerald-50 text-bd-green border-emerald-100 font-black' : 'text-gray-600 border-gray-200 hover:bg-gray-50'}`}
+        >
+          English
+        </button>
         <button className="bg-bd-green text-white p-1.5 rounded-full w-7 h-7 flex items-center justify-center">
           <Accessibility className="w-4 h-4" />
         </button>
@@ -68,95 +91,110 @@ export default function Header() {
         
         <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 relative z-10">
           <div className="flex w-full lg:w-auto justify-between items-center">
-            <div className="flex items-center space-x-3.5">
-              <svg className="w-14 h-14 md:w-16 md:h-16 shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="45" fill="#006a4e"/>
-                <circle cx="50" cy="50" r="33" fill="#da291c"/>
-                <circle cx="50" cy="50" r="28" fill="#006a4e"/>
-                <path d="M50,22 L53,35 L66,35 L55,43 L59,56 L50,47 L41,56 L45,43 L34,35 L47,35 Z" fill="#F4B400"/>
-                <text x="50" y="82" fill="white" fontSize="6" fontFamily="sans-serif" fontWeight="bold" textAnchor="middle">গণপ্রজাতন্ত্রী বাংলাদেশ</text>
-              </svg>
+            <div className="flex items-center space-x-3.5 animate-fade-in">
+              <img 
+                src="https://bangladesh.gov.bd/site-assets/images/logo.png" 
+                alt="Government of Bangladesh Logo" 
+                className="w-14 h-14 md:w-16 md:h-16 shrink-0 object-contain drop-shadow-sm hover:scale-105 transition-transform duration-300"
+                referrerPolicy="no-referrer"
+              />
               <div>
-                <h1 className="text-xl md:text-2xl font-bold text-bd-green leading-tight tracking-tight">Bangladesh National Portal</h1>
-                <p className="text-[11px] md:text-xs text-gray-500 font-semibold mt-0.5">bangladesh.gov.bd</p>
-                <p className="hidden lg:block text-[10px] text-gray-400 mt-0.5">National Portal of the Government of the People's Republic of Bangladesh</p>
+                <h1 className="text-xl md:text-2xl font-black text-bd-green leading-none tracking-tight font-display">{t('nationalPortal')}</h1>
+                <p className="text-[11px] md:text-xs text-emerald-800 font-semibold mt-1 tracking-wider uppercase font-mono">bangladesh.gov.bd</p>
+                <p className="hidden lg:block text-[10px] text-gray-400 font-medium mt-0.5">{t('nationalPortalDesc')}</p>
               </div>
             </div>
-            <button className="lg:hidden text-gray-800 p-2 border border-gray-200 rounded-md bg-gray-50">
+            <button className="lg:hidden text-gray-800 p-2 border border-gray-200 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors mx-3">
               <Menu className="w-6 h-6" />
             </button>
           </div>
 
-          <div className="w-full lg:w-[450px]">
-            <div className="hidden lg:flex border border-gray-300 rounded-md overflow-hidden bg-white h-9 shadow-sm">
-              <div className="flex items-center px-3 bg-white border-r border-gray-200 relative">
-                <select className="text-[13px] text-gray-700 bg-transparent outline-none cursor-pointer appearance-none pr-5 relative z-10">
-                  <option>All</option>
-                  <option>Forms</option>
-                  <option>Publications</option>
+          <div className="w-full lg:w-[480px]">
+            <div className="hidden lg:flex border-2 border-[#006a4e] rounded-md overflow-hidden bg-white h-10 shadow-sm">
+              <div className="flex items-center px-3 bg-gray-50 border-r border-gray-200 relative">
+                <select className="text-[12px] font-bold text-gray-700 bg-transparent outline-none cursor-pointer appearance-none pr-5 relative z-10">
+                  <option>{lang === 'bn' ? 'সকল' : 'All'}</option>
+                  <option>{lang === 'bn' ? 'ই-সেবা' : 'e-Services'}</option>
+                  <option>{lang === 'bn' ? 'অফিস' : 'Offices'}</option>
+                  <option>{lang === 'bn' ? 'ফরম' : 'Forms'}</option>
+                  <option>{lang === 'bn' ? 'প্রকাশনা' : 'Publications'}</option>
                 </select>
-                <ChevronDown className="w-3.5 h-3.5 text-gray-700 absolute right-2 pointer-events-none z-0" />
+                <ChevronDown className="w-3.5 h-3.5 text-gray-600 absolute right-2 pointer-events-none z-0" />
               </div>
-              <input type="text" placeholder="Search by keyword" className="w-full px-3 text-[13px] outline-none text-gray-700 placeholder-gray-500" />
-              <button className="bg-bd-green hover:bg-bd-hover-green text-white px-4 transition-colors flex items-center justify-center">
-                <Search className="w-4 h-4" />
+              <input 
+                type="text" 
+                placeholder={t('searchPlaceholder')} 
+                className="w-full px-3 text-[13px] outline-none text-gray-800 placeholder-gray-400 font-medium" 
+              />
+              <button className="bg-[#006a4e] hover:bg-emerald-800 text-white px-6 transition-colors flex items-center justify-center font-bold text-[13px] shrink-0">
+                {t('searchBtn')}
               </button>
             </div>
             <div className="hidden lg:flex mt-2 text-[11px] flex-wrap items-center gap-1.5 font-bold">
-              <span className="text-bd-green">Popular Searches:</span>
-              <a href="#" className="hover:underline text-bd-green">NID</a>
+              <span className="text-bd-green">{t('popularSearches')}</span>
+              <a href="#" className="hover:underline text-bd-green">{t('nid')}</a>
               <span className="text-gray-300 font-normal">|</span>
-              <a href="#" className="hover:underline text-bd-green">Passport</a>
+              <a href="#" className="hover:underline text-bd-green">{t('passport')}</a>
               <span className="text-gray-300 font-normal">|</span>
-              <a href="#" className="hover:underline text-bd-green">Tax</a>
+              <a href="#" className="hover:underline text-bd-green">{t('tax')}</a>
               <span className="text-gray-300 font-normal">|</span>
-              <a href="#" className="hover:underline text-bd-green">Land</a>
+              <a href="#" className="hover:underline text-bd-green">{t('land')}</a>
               <span className="text-gray-300 font-normal">|</span>
-              <a href="#" className="hover:underline text-bd-green">BRTA</a>
+              <a href="#" className="hover:underline text-bd-green">{t('brta')}</a>
               <span className="text-gray-300 font-normal">|</span>
-              <a href="#" className="hover:underline text-bd-green">Visa</a>
+              <a href="#" className="hover:underline text-bd-green">{t('visa')}</a>
             </div>
 
             <div className="lg:hidden border border-gray-300 rounded-xl overflow-hidden bg-white h-11 shadow-sm flex items-center px-4 mt-3">
-              <input type="text" placeholder="Search services, offices, information..." className="w-full text-[13px] outline-none text-gray-700 placeholder-gray-500" />
+              <input 
+                type="text" 
+                placeholder={t('searchPlaceholder')} 
+                className="w-full text-[13px] outline-none text-gray-700 placeholder-gray-500" 
+              />
               <Search className="w-5 h-5 text-gray-600 shrink-0" />
             </div>
           </div>
         </div>
       </header>
 
-      <nav className="hidden lg:flex bg-bd-green text-white text-[11px] sticky top-0 z-50 shadow-md select-none">
-        <div className="max-w-[1440px] mx-auto flex justify-between items-stretch overflow-x-auto scrollbar-hide">
+      <nav className="hidden lg:flex bg-[#006a4e] text-white text-[11px] sticky top-0 z-50 shadow-md select-none">
+        <div className="max-w-[1440px] mx-auto flex justify-between items-stretch overflow-x-auto scrollbar-hide w-full">
           <div className="flex items-center whitespace-nowrap">
-            <a href="#" className="sticky left-0 z-10 px-5 py-3.5 bg-bd-hover-green hover:bg-emerald-950 transition-colors flex items-center justify-center shadow-[4px_0_12px_rgba(0,0,0,0.15)] border-r border-white/10">
+            <a href="#" className="sticky left-0 z-10 px-5 py-3.5 bg-[#da291c] hover:bg-red-700 transition-colors flex items-center justify-center border-r border-white/10">
               <Home className="w-4 h-4" />
             </a>
-            <a href="#" className="px-3.5 py-3.5 hover:bg-bd-hover-green border-r border-white/5 transition-colors font-semibold flex items-center">
-              About Bangladesh <ChevronDown className="w-2.5 h-2.5 ml-1 opacity-70" />
+            <a href="#" className="px-3 py-3.5 hover:bg-emerald-800 border-r border-white/5 transition-colors font-semibold flex items-center gap-1">
+              {t('navAbout')} <ChevronDown className="w-2.5 h-2.5 opacity-70" />
             </a>
-            <a href="#" className="px-3.5 py-3.5 hover:bg-bd-hover-green border-r border-white/5 transition-colors font-semibold flex items-center">
-              Government <ChevronDown className="w-2.5 h-2.5 ml-1 opacity-70" />
+            <a href="#" className="px-3 py-3.5 hover:bg-emerald-800 border-r border-white/5 transition-colors font-semibold flex items-center gap-1">
+              {t('navGovt')} <ChevronDown className="w-2.5 h-2.5 opacity-70" />
             </a>
-            <a href="#" className="px-3.5 py-3.5 hover:bg-bd-hover-green border-r border-white/5 transition-colors font-semibold flex items-center">
-              e-Services <ChevronDown className="w-2.5 h-2.5 ml-1 opacity-70" />
+            <a href="#" className="px-3 py-3.5 hover:bg-emerald-800 border-r border-white/5 transition-colors font-semibold flex items-center gap-1">
+              {t('navServices')} <ChevronDown className="w-2.5 h-2.5 opacity-70" />
             </a>
-            <a href="#" className="px-3.5 py-3.5 hover:bg-bd-hover-green border-r border-white/5 transition-colors font-semibold flex items-center">
-              Ministries & Divisions <ChevronDown className="w-2.5 h-2.5 ml-1 opacity-70" />
+            <a href="#" className="px-3 py-3.5 hover:bg-emerald-800 border-r border-white/5 transition-colors font-semibold flex items-center gap-1">
+              {t('navMinistries')} <ChevronDown className="w-2.5 h-2.5 opacity-70" />
             </a>
-            <a href="#" className="px-3.5 py-3.5 hover:bg-bd-hover-green border-r border-white/5 transition-colors font-semibold flex items-center">
-              Offices <ChevronDown className="w-2.5 h-2.5 ml-1 opacity-70" />
+            <a href="#" className="px-3 py-3.5 hover:bg-emerald-800 border-r border-white/5 transition-colors font-semibold flex items-center gap-1">
+              {t('navOffices')} <ChevronDown className="w-2.5 h-2.5 opacity-70" />
             </a>
-            <a href="#" className="px-3.5 py-3.5 hover:bg-bd-hover-green border-r border-white/5 transition-colors font-semibold flex items-center">
-              Citizen Corner <ChevronDown className="w-2.5 h-2.5 ml-1 opacity-70" />
+            <a href="#" className="px-3 py-3.5 hover:bg-emerald-800 border-r border-white/5 transition-colors font-semibold flex items-center gap-1">
+              {t('navCitizen')} <ChevronDown className="w-2.5 h-2.5 opacity-70" />
             </a>
-            <a href="#" className="px-3.5 py-3.5 hover:bg-bd-hover-green border-r border-white/5 transition-colors font-semibold flex items-center">
-              Business Corner <ChevronDown className="w-2.5 h-2.5 ml-1 opacity-70" />
+            <a href="#" className="px-3 py-3.5 hover:bg-emerald-800 border-r border-white/5 transition-colors font-semibold flex items-center gap-1">
+              {t('navBusiness')} <ChevronDown className="w-2.5 h-2.5 opacity-70" />
             </a>
-            <a href="#" className="px-3.5 py-3.5 hover:bg-bd-hover-green border-r border-white/5 transition-colors font-semibold">Contact Us</a>
+            <a href="#" className="px-3 py-3.5 hover:bg-emerald-800 border-r border-white/5 transition-colors font-semibold flex items-center gap-1">
+              {t('navForeigners')} <ChevronDown className="w-2.5 h-2.5 opacity-70" />
+            </a>
+            <a href="#" className="px-3 py-3.5 hover:bg-emerald-800 border-r border-white/5 transition-colors font-semibold flex items-center gap-1">
+              {t('navMedia')} <ChevronDown className="w-2.5 h-2.5 opacity-70" />
+            </a>
+            <a href="#" className="px-3 py-3.5 hover:bg-emerald-800 border-r border-white/5 transition-colors font-semibold">{t('navContact')}</a>
           </div>
-          <div className="sticky right-0 bg-bd-green flex items-center justify-center px-4 shadow-[-4px_0_12px_rgba(0,0,0,0.15)] z-10">
-            <a href="#" className="bg-white hover:bg-gray-100 text-bd-green font-bold px-4 py-1.5 rounded-md flex items-center justify-center gap-1.5 transition-colors shrink-0">
-              <User className="w-3.5 h-3.5" /> My Portal
+          <div className="sticky right-0 bg-[#006a4e] flex items-center justify-center px-4 z-10">
+            <a href="#" className="bg-[#da291c] hover:bg-red-700 text-white font-bold px-4 py-1.5 rounded-md flex items-center justify-center gap-1.5 transition-all shadow-sm">
+              <User className="w-3.5 h-3.5" /> {t('myPortal')}
             </a>
           </div>
         </div>

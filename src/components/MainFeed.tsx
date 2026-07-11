@@ -221,7 +221,7 @@ export default function MainFeed() {
       </div>
 
       {/* Mega Projects */}
-      <div className="bg-transparent md:bg-white md:rounded-2xl md:border md:border-slate-100 py-2 md:p-5 md:shadow-md md:hover:shadow-lg transition-shadow duration-300 relative w-full border-0 px-4 md:px-0">
+      <div className="bg-transparent md:bg-white md:rounded-2xl md:border md:border-slate-100 py-2 md:p-5 md:shadow-md md:hover:shadow-lg transition-shadow duration-300 relative w-full border-0 px-4 md:px-5">
         <div className="flex justify-between items-center mb-3 border-b border-gray-100 pb-2 md:border-b md:border-gray-100 md:pb-3 md:mb-4">
           <h3 className="text-[12px] md:text-sm font-black text-[#006a4e] uppercase tracking-wider flex items-center gap-1.5 font-display">
             <span className="w-1.5 h-4 bg-[#da291c] inline-block rounded-sm"></span>
@@ -372,7 +372,7 @@ export default function MainFeed() {
       </div>
 
       {/* Government e-Services Grid (36 Dense Items) */}
-      <div className="bg-transparent md:bg-white py-4 md:p-6 md:rounded-2xl md:border md:border-slate-100 md:shadow-md md:hover:shadow-lg transition-shadow duration-300 border-0 px-4 md:px-0">
+      <div className="bg-transparent md:bg-white py-4 md:p-6 md:rounded-2xl md:border md:border-slate-100 md:shadow-md md:hover:shadow-lg transition-shadow duration-300 border-0 px-4 md:px-6">
         <div className="border-b border-gray-100 pb-3 mb-4 flex justify-between items-center select-none">
           <h3 className="text-xs md:text-sm font-black text-[#006a4e] uppercase tracking-wider flex items-center gap-1.5 font-display">
             <span className="w-1.5 h-4 bg-[#da291c] inline-block rounded-sm"></span>
@@ -553,7 +553,7 @@ export default function MainFeed() {
       </div>
 
       {/* 6 Large Shortcut Cards inside the Left Column */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 mb-8 px-4 md:px-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 mb-8 px-4 md:px-4">
         {/* Card 1: Citizen Charter */}
         <div className="bg-white p-6 md:p-7 rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg hover:border-emerald-500/20 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
           <div>

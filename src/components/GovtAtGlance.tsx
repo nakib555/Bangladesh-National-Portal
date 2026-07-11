@@ -5,7 +5,7 @@ export default function GovtAtGlance() {
   const { t } = useLanguage();
 
   return (
-    <div className="bg-transparent md:bg-white py-2 md:p-5 md:rounded-2xl md:border md:border-slate-100 md:shadow-md md:hover:shadow-lg transition-shadow duration-300 select-none border-0 px-4 md:px-0">
+    <div className="bg-transparent md:bg-white py-2 md:p-5 md:rounded-2xl md:border md:border-slate-100 md:shadow-md md:hover:shadow-lg transition-shadow duration-300 select-none border-0 px-4 md:px-5">
       <div className="flex justify-between items-center mb-3 border-b pb-2 border-slate-100 md:border-b md:border-slate-100 md:pb-3 md:mb-4">
         <h3 className="text-[12px] md:text-sm font-bold text-bd-green uppercase tracking-wider flex items-center gap-1.5">
           <span className="w-1 h-3.5 bg-bd-red inline-block rounded-sm md:hidden"></span>
